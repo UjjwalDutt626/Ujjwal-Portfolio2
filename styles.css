@@ -1,0 +1,65 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#020202;--panel:#0b0806;--panel2:#100b07;--orange:#f0440b;
+  --amber:#ffb300;--text:#f7f7f7;--muted:#a5a5a5;--line:rgba(240,68,11,.7);
+  --max:1180px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Space Grotesk",Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;background:radial-gradient(circle at 50% 20%,rgba(240,68,11,.04),transparent 35%)}
+a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 80px),var(--max));margin:auto}
+.section{position:relative;border-bottom:1px solid rgba(240,68,11,.55)}
+.site-header{position:fixed;top:0;left:0;width:100%;z-index:50;background:rgba(0,0,0,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(240,68,11,.45)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font:700 13px "Orbitron";letter-spacing:.06em;color:var(--amber)}
+.nav-links{display:flex;align-items:center;gap:46px;font:500 9px "Orbitron";letter-spacing:.25em}
+.nav-links a:not(.nav-cta){transition:.25s;color:#eee}.nav-links a:not(.nav-cta):hover{color:var(--orange)}
+.nav-cta,.tiny-btn{background:linear-gradient(90deg,#ffb300,#f0440b);color:#fff;border-radius:4px;padding:10px 24px;letter-spacing:0!important}
+.menu-toggle{display:none;background:none;border:0}.menu-toggle span{display:block;width:25px;height:2px;background:#fff;margin:5px}
+.hero{min-height:820px;padding:150px 0 50px;overflow:hidden}
+.hero-grid{min-height:650px;position:relative}
+.hero-copy{text-align:center;position:relative;z-index:5}
+.eyebrow,.section-kicker{font:500 9px "Orbitron";letter-spacing:.3em;color:#bbb}
+.hero h1{font:800 clamp(58px,10vw,142px)/.86 "Orbitron";letter-spacing:-.08em;display:flex;justify-content:center;gap:clamp(20px,6vw,100px);margin:15px 0}
+.hero h1 span:first-child{color:#fff}.hero h1 span:last-child{color:#fff}
+.hero-role{font:700 clamp(13px,1.5vw,22px) "Orbitron";letter-spacing:.02em}
+.hero-role b{color:var(--orange)}
+.hero-visual{position:relative;height:570px;max-width:900px;margin:auto}
+.portrait-wrap{position:absolute;z-index:3;left:50%;top:20px;transform:translateX(-50%);height:530px;width:440px;display:flex;justify-content:center;align-items:flex-end}
+.portrait{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 0 20px rgba(255,80,0,.25));animation:float 6s ease-in-out infinite}
+.portrait-orbit{position:absolute;border:1px solid rgba(255,98,0,.4);border-radius:50%;left:50%;top:140px;transform:translateX(-50%);pointer-events:none}
+.orbit-one{width:390px;height:390px;animation:spin 16s linear infinite}.orbit-two{width:500px;height:500px;opacity:.3;animation:spin 25s linear infinite reverse}
+.glass{background:linear-gradient(145deg,rgba(25,13,5,.94),rgba(10,10,10,.82));border:1px solid rgba(240,68,11,.65);box-shadow:0 12px 40px rgba(0,0,0,.45);border-radius:7px;backdrop-filter:blur(8px)}
+.mini-label{font:600 8px "Orbitron";letter-spacing:.1em}
+.hero-about,.hero-create{position:absolute;z-index:6;width:190px;padding:15px;font-size:8px;line-height:1.5}.hero-about{left:0;top:160px}.hero-create{right:0;top:145px;text-align:right}.hero-create p{margin:7px 0 10px;color:#bbb}
+.tiny-btn{display:inline-block;padding:7px 13px;font-size:7px}
+.stat{position:absolute;z-index:7;padding:16px}.stat strong{display:block;color:var(--orange);font:700 38px "Orbitron";line-height:1}.stat span{display:block;font:600 9px "Orbitron";margin-top:4px}.stat p{font-size:8px;color:#aaa;line-height:1.35;margin-top:8px}.stat-projects{left:30px;bottom:40px;width:285px}.stat-motion{left:50%;bottom:20px;transform:translateX(-50%);width:190px}.stat-motion strong{font-size:16px}.stat-years{right:25px;bottom:40px;width:130px}.stat-years strong{font-size:30px}
+.about{padding:80px 0}.section-heading h2,.section-heading h3{font:500 clamp(38px,5vw,64px)/1 "Orbitron";margin-top:8px}.about-grid{display:grid;grid-template-columns:1fr 1fr;min-height:360px;align-items:center}.about-text>p{font:500 12px "Orbitron";margin-bottom:25px;color:#ddd}.bullet-list{list-style:none;max-width:590px}.bullet-list li{font-size:11px;line-height:1.55;color:#aaa;margin:0 0 15px;padding-left:16px;position:relative}.bullet-list li:before{content:"♦";position:absolute;left:0;color:var(--amber);font-size:7px}.about-image{text-align:right;height:390px;overflow:hidden}.about-image img{height:100%;max-width:100%;object-fit:contain;opacity:.55;filter:drop-shadow(0 0 20px rgba(240,68,11,.12))}
+.education{border:1px solid rgba(240,68,11,.5);padding:35px;margin-top:35px}.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px}.edu-card{border:1px solid rgba(255,179,0,.7);padding:18px;display:flex;gap:15px;background:linear-gradient(90deg,rgba(255,80,0,.04),transparent)}.edu-icon{width:44px;height:44px;border-radius:5px;display:grid;place-items:center;border:1px solid #888;font:700 10px "Orbitron"}.edu-card h4{font:600 12px "Orbitron";margin-bottom:7px}.edu-card p{font-size:9px;color:#aaa}
+.skills{padding:75px 0;overflow:hidden}.skills-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 100%,rgba(240,68,11,.22),transparent 55%),linear-gradient(135deg,transparent,rgba(255,85,0,.03));filter:blur(20px)}.center-heading{text-align:center;position:relative}.center-heading h2{font:800 clamp(35px,5vw,65px) "Orbitron";color:var(--orange);margin-top:8px}.skills-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:850px;margin:45px auto}.skill-card{height:88px;display:grid;place-items:center;border:1px solid var(--orange);border-radius:5px;background:rgba(25,15,10,.72);font:600 22px "Orbitron";color:var(--orange);transition:.35s}.skill-card:hover{transform:translateY(-7px);box-shadow:0 12px 35px rgba(240,68,11,.18);background:rgba(240,68,11,.08)}
+.experience{padding:75px 0;min-height:430px}.experience-card{display:grid;grid-template-columns:75px 1fr;gap:20px;max-width:850px;margin:45px auto 0}.company-logo{width:75px;height:75px;border-radius:5px;background:#fff;display:grid;place-items:center;overflow:hidden}.company-logo img{width:100%;height:100%;object-fit:contain}.experience-content h3{font:600 18px "Orbitron"}.company-name{font:500 11px "Orbitron";margin-top:4px}.date{font-size:10px;color:#aaa;margin:3px 0 15px}.experience-content p:not(.company-name):not(.date){font-size:9px;color:#aaa;line-height:1.55;margin:8px 0}
+.contact{padding:300px 0 80px;min-height:900px}.contact-container{max-width:1080px}.contact-form{margin-top:35px;padding:28px 24px;border:1px solid rgba(240,68,11,.75);border-radius:5px;background:linear-gradient(135deg,rgba(240,68,11,.04),rgba(255,179,0,.05));display:grid;gap:22px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:32px}label{font:600 9px "Orbitron";display:grid;gap:8px;letter-spacing:.04em}input,textarea{font:500 12px "Space Grotesk";color:#fff;background:rgba(20,12,7,.85);border:1px solid var(--orange);border-radius:3px;padding:12px;outline:none;resize:vertical}input:focus,textarea:focus{box-shadow:0 0 0 2px rgba(255,179,0,.12)}.submit-btn{border:0;border-radius:7px;background:#ef3507;color:#fff;padding:15px;font:700 13px "Space Grotesk";cursor:pointer;transition:.25s}.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(240,68,11,.3)}.form-note{font-size:9px;color:#777;text-align:center}
+.footer{padding:25px 0;border-top:1px solid rgba(240,68,11,.4);font:500 8px "Orbitron";letter-spacing:.1em;color:#777}.footer .container{display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
+.cursor-glow{position:fixed;width:240px;height:240px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(240,68,11,.12),transparent 65%);transform:translate(-50%,-50%);z-index:1;mix-blend-mode:screen}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+
+@media(max-width:900px){
+  .container{width:min(calc(100% - 38px),var(--max))}
+  .nav-links{gap:20px}
+  .hero{padding-top:125px}.hero h1{gap:15px}.hero-visual{height:590px}.portrait-wrap{height:500px;width:390px}.hero-about{left:0;top:150px}.hero-create{right:0;top:135px}.stat-projects{left:0}.stat-years{right:0}
+  .contact{padding-top:180px}
+}
+@media(max-width:700px){
+  .nav{height:64px}.menu-toggle{display:block;z-index:2}.nav-links{display:none;position:absolute;top:64px;left:0;width:100%;padding:25px;background:#050505;border-bottom:1px solid var(--orange);flex-direction:column;gap:24px}.nav-links.open{display:flex}.nav-cta{width:100%;text-align:center}
+  .hero{padding-top:105px;min-height:900px}.hero h1{font-size:45px;gap:8px;letter-spacing:-.07em}.hero-role{font-size:10px;line-height:1.5}.hero-visual{height:670px;margin-top:15px}.portrait-wrap{height:430px;width:330px;top:70px}.orbit-one{width:300px;height:300px;top:125px}.orbit-two{width:370px;height:370px;top:90px}
+  .hero-about,.hero-create{width:145px;font-size:7px}.hero-about{left:0;top:80px}.hero-create{right:0;top:65px}.stat-projects{left:0;bottom:45px;width:220px}.stat-motion{bottom:0;width:145px}.stat-years{right:0;bottom:45px;width:100px}.stat strong{font-size:28px}.stat p{font-size:7px}
+  .about-grid{grid-template-columns:1fr}.about-image{height:300px;order:-1;margin-bottom:25px}.education-grid{grid-template-columns:1fr}.education{padding:22px 16px}
+  .skills-grid{grid-template-columns:repeat(2,1fr);gap:10px}.skill-card{height:72px;font-size:17px}
+  .experience-card{grid-template-columns:55px 1fr;gap:13px}.company-logo{width:55px;height:55px}.experience-content h3{font-size:14px}.company-name{font-size:8px}
+  .contact{padding:160px 0 55px;min-height:auto}.form-row{grid-template-columns:1fr;gap:22px}.contact-form{padding:22px 16px}.footer .container{flex-direction:column;gap:10px}
+}
+@media(max-width:430px){
+  .hero h1{font-size:38px}.hero-visual{height:650px}.portrait-wrap{width:290px;height:400px}.hero-about,.hero-create{width:128px}.hero-create{right:-2px}.stat-projects{width:190px}.stat-motion{width:130px}.stat-years{width:86px}.stat-years span{font-size:7px}.stat p{display:none}
+}
